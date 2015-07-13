@@ -48,11 +48,8 @@ void* msg_handle(void *args){
 	char *r_msg =malloc(sizeof(char)*100);
 
 	
-	//printf("This is the thread %d with file descriptor %d \n",argss->k,argss->newsockfd );
+	
 	printf("Thread%d: Created!\n",argss->k);
-		
-	//sprintf(r_msg,"%d kinds of resource are available. Available resource ids start from 0",RES_TYPE);
-	//n = write(argss->newsockfd,r_msg,strlen(r_msg));
 	get_resource_info();
 	n = write(argss->newsockfd,open_msg,strlen(open_msg));
 	if (n < 0) error("ERROR writing to socket");
